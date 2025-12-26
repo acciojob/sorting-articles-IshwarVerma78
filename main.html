@@ -1,16 +1,82 @@
 <!DOCTYPE html>
-
-<html>
-
+<html lang="en">
 <head>
-	<link rel="stylesheet" href="styles.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sort</title>
 </head>
-
 <body>
-	<!-- the entire body must be written by student -->
-    <script type="text/javascript" src="./script.js">
-</script>
 
+    <div class="container">
+
+    </div>
+    
+
+
+    <script>
+        let bands = ['The Plot in You', 'The Devil Wears Prada', 'Pierce the Veil', 'Norma Jean', 'The Bled', 'Say Anything', 'The Midway State', 'We Came as Romans', 'Counterparts', 'Oh, Sleeper', 'A Skylit Drive', 'Anywhere But Here', 'An Old Dog'];
+
+        bands.sort(display);
+
+        function display(a,b){
+           
+
+            if(a.startsWith("The ")){
+                a = a.slice(4);
+            }
+
+            if(b.startsWith("The ")){
+                b = b.slice(4)
+            }
+
+            if(a.startsWith("An ")){
+                a = a.slice(3)
+            }
+
+            if(b.startsWith("An ")){
+                b = b.slice(3)
+            }
+
+            if(a.startsWith("A ")){
+                a = a.slice(2)
+            }
+
+            if(b.startsWith("A ")){
+                b = b.slice(2)
+            }
+
+            if(a>b){
+                return 1;
+            }
+
+            if(a<b){
+                return -1;
+            }
+
+            return 0;
+
+        }
+
+
+
+        bands.forEach((str)=>{
+            if(str.startsWith("The")){
+                console.log(str);
+            }
+        })
+        // let newArr = 
+
+        let container = document.querySelector(".container");
+        let ul = document.createElement("ul");
+
+        bands.forEach((v)=>{
+            let list =  document.createElement("li");
+            list.innerText = v;
+            ul.append(list);
+        })
+
+        container.append(ul);
+        console.log(ul);
+    </script>
 </body>
-
 </html>
